@@ -8,6 +8,7 @@ target 'MyRouteTransit' do
   # Pods for MyRouteTransit
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'RealmSwift'
 
   target 'MyRouteTransitTests' do
     inherit! :search_paths
