@@ -1,0 +1,410 @@
+[
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032095F8",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "会津鉄道",
+        "owl:sameAs": "odpt.Operator:Aizu",
+        "odpt:operatorTitle": {
+            "en": "Aizu Railway",
+            "ja": "会津鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032095F9",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "秩父鉄道",
+        "owl:sameAs": "odpt.Operator:Chichibu",
+        "odpt:operatorTitle": {
+            "en": "Chichibu Railway",
+            "ja": "秩父鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003208774",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "富士急行",
+        "owl:sameAs": "odpt.Operator:Fujikyu",
+        "odpt:operatorTitle": {
+            "en": "Fuji Kyuko",
+            "ja": "富士急行"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003230641",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "箱根登山鉄道",
+        "owl:sameAs": "odpt.Operator:HakoneTozan",
+        "odpt:operatorTitle": {
+            "en": "Hakone Tozan Railway",
+            "ja": "箱根登山鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032095FA",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "北総鉄道",
+        "owl:sameAs": "odpt.Operator:Hokuso",
+        "odpt:operatorTitle": {
+            "en": "Hokuso Railway",
+            "ja": "北総鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032097DE",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "伊豆箱根鉄道",
+        "owl:sameAs": "odpt.Operator:IzuHakone",
+        "odpt:operatorTitle": {
+            "en": "IzuHakone Railway",
+            "ja": "伊豆箱根鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032097DF",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "伊豆急行",
+        "owl:sameAs": "odpt.Operator:Izukyu",
+        "odpt:operatorTitle": {
+            "en": "Izukyu Corporation",
+            "ja": "伊豆急行"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032097E0",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "JR東海",
+        "owl:sameAs": "odpt.Operator:JR-Central",
+        "odpt:operatorTitle": {
+            "en": "JR Central",
+            "ja": "JR東海"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032097E1",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "JR四国",
+        "owl:sameAs": "odpt.Operator:JR-Shikoku",
+        "odpt:operatorTitle": {
+            "en": "JR Shikoku",
+            "ja": "JR四国"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032097E2",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "JR西日本",
+        "owl:sameAs": "odpt.Operator:JR-West",
+        "odpt:operatorTitle": {
+            "en": "JR West",
+            "ja": "JR西日本"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003230766",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "鹿島臨海鉄道",
+        "owl:sameAs": "odpt.Operator:KashimaRinkai",
+        "odpt:operatorTitle": {
+            "en": "Kashima Rinkai Tetsudo",
+            "ja": "鹿島臨海鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6608",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "首都圏新都市鉄道",
+        "owl:sameAs": "odpt.Operator:MIR",
+        "odpt:operatorTitle": {
+            "en": "Metropolitan Intercity Railway",
+            "ja": "首都圏新都市鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003208775",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "横浜高速鉄道",
+        "owl:sameAs": "odpt.Operator:Minatomirai",
+        "odpt:operatorTitle": {
+            "en": "Yokohama Minatomirai Railway",
+            "ja": "横浜高速鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003208776",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "埼玉高速鉄道",
+        "owl:sameAs": "odpt.Operator:SaitamaRailway",
+        "odpt:operatorTitle": {
+            "en": "Saitama Railway",
+            "ja": "埼玉高速鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032095FB",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "芝山鉄道",
+        "owl:sameAs": "odpt.Operator:Shibayama",
+        "odpt:operatorTitle": {
+            "en": "Shibayama Railway",
+            "ja": "芝山鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032095FC",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "新京成電鉄",
+        "owl:sameAs": "odpt.Operator:ShinKeisei",
+        "odpt:operatorTitle": {
+            "en": "Shinkeisei Electric Railway",
+            "ja": "新京成電鉄"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E660A",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "東京臨海高速鉄道",
+        "owl:sameAs": "odpt.Operator:TWR",
+        "odpt:operatorTitle": {
+            "en": "Tokyo Waterfront Area Rapid Transit",
+            "ja": "東京臨海高速鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E660B",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "東武鉄道",
+        "owl:sameAs": "odpt.Operator:Tobu",
+        "odpt:operatorTitle": {
+            "en": "Tobu Railway",
+            "ja": "東武鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6609",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "東京都交通局",
+        "owl:sameAs": "odpt.Operator:Toei",
+        "odpt:operatorTitle": {
+            "en": "Tokyo Metropolitan Bureau of Transportation",
+            "ja": "東京都交通局"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6606",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "JR東日本",
+        "owl:sameAs": "odpt.Operator:JR-East",
+        "odpt:operatorTitle": {
+            "en": "JR East",
+            "ja": "JR東日本"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6605",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "京急電鉄",
+        "owl:sameAs": "odpt.Operator:Keikyu",
+        "odpt:operatorTitle": {
+            "en": "Keikyu Corporation",
+            "ja": "京急電鉄"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6607",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "京王電鉄",
+        "owl:sameAs": "odpt.Operator:Keio",
+        "odpt:operatorTitle": {
+            "en": "Keio Corporation",
+            "ja": "京王電鉄"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6604",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "京成電鉄",
+        "owl:sameAs": "odpt.Operator:Keisei",
+        "odpt:operatorTitle": {
+            "en": "Keisei Electric Railway",
+            "ja": "京成電鉄"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6603",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "小田急電鉄",
+        "owl:sameAs": "odpt.Operator:Odakyu",
+        "odpt:operatorTitle": {
+            "en": "Odakyu Electric Railway",
+            "ja": "小田急電鉄"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6601",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "西武鉄道",
+        "owl:sameAs": "odpt.Operator:Seibu",
+        "odpt:operatorTitle": {
+            "en": "Seibu Railway",
+            "ja": "西武鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6600",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "東京メトロ",
+        "owl:sameAs": "odpt.Operator:TokyoMetro",
+        "odpt:operatorTitle": {
+            "en": "Tokyo Metro",
+            "ja": "東京メトロ"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003230767",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "東京モノレール",
+        "owl:sameAs": "odpt.Operator:TokyoMonorail",
+        "odpt:operatorTitle": {
+            "en": "Tokyo Monorail",
+            "ja": "東京モノレール"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032F21EB",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "北越急行",
+        "owl:sameAs": "odpt.Operator:Hokuetsu",
+        "odpt:operatorTitle": {
+            "en": "Hokuetsu Express",
+            "ja": "北越急行"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E6602",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "東急電鉄",
+        "owl:sameAs": "odpt.Operator:Tokyu",
+        "odpt:operatorTitle": {
+            "en": "Tokyu Corporation",
+            "ja": "東急電鉄"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003208777",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "東葉高速鉄道",
+        "owl:sameAs": "odpt.Operator:ToyoRapid",
+        "odpt:operatorTitle": {
+            "en": "Toyo Rapid Railway",
+            "ja": "東葉高速鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000032095FD",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "野岩鉄道",
+        "owl:sameAs": "odpt.Operator:Yagan",
+        "odpt:operatorTitle": {
+            "en": "Yagantetsudo Railway",
+            "ja": "野岩鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C000000000000010000030E660C",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-04-22T15:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "ゆりかもめ",
+        "owl:sameAs": "odpt.Operator:Yurikamome",
+        "odpt:operatorTitle": {
+            "en": "Yurikamome",
+            "ja": "ゆりかもめ"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003395500",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-11-01T10:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "相模鉄道",
+        "owl:sameAs": "odpt.Operator:Sotetsu",
+        "odpt:operatorTitle": {
+            "en": "Sagami Railway",
+            "ja": "相模鉄道"
+        }
+    },
+    {
+        "@id": "urn:ucode:_00001C00000000000001000003395501",
+        "@type": "odpt:Operator",
+        "dc:date": "2019-11-01T10:00:00+09:00",
+        "@context": "http://vocab.odpt.org/context_odpt.jsonld",
+        "dc:title": "横浜市交通局",
+        "owl:sameAs": "odpt.Operator:YokohamaMunicipal",
+        "odpt:operatorTitle": {
+            "en": "Transportation Bureau, City of Yokohama",
+            "ja": "横浜市交通局"
+        }
+    }
+]

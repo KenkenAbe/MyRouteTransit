@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Railway-1.png",
+      "filename" : "CreateButton-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Railway-2.png",
+      "filename" : "CreateButton.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -18,12 +18,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Railway@2x-1.png",
+      "filename" : "CreateButton@2x-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Railway@2x-2.png",
+      "filename" : "CreateButton@2x.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
@@ -34,12 +34,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "Railway@3x-1.png",
+      "filename" : "CreateButton@3x-1.png",
       "scale" : "3x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Railway@3x-2.png",
+      "filename" : "CreateButton@3x.png",
       "appearances" : [
         {
           "appearance" : "luminosity",
