@@ -13,7 +13,9 @@ import Alamofire
 
 class StationChooseViewController:UIViewController, UITableViewDelegate, UITableViewDataSource{
     var railway:RailwayLine!
+    var station:Station!
     var stations = [Station]()
+    var otherStations = [Station]()
     var railwayDirection = [RailDirection]()
     @IBOutlet weak var stationView: UITableView!
     
@@ -40,6 +42,8 @@ class StationChooseViewController:UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.station = self.stations[indexPath.row]
+        
         let alert = UIAlertController(title: nil, message: "方面を選択してください", preferredStyle: .alert)
         for direction in railwayDirection{
             alert.addAction(UIAlertAction(title: direction.directionTitle, style: .default, handler: {action in
@@ -53,6 +57,14 @@ class StationChooseViewController:UIViewController, UITableViewDelegate, UITable
     }
     
     func selectDirection(direction:RailDirection){
-        print(direction.directionTitle)
+        let nextView = storyboard!.instantiateViewController(identifier: "TrainChooseView") as! TrainChooseViewController
+        nextView.railway = self.railway
+        nextView.station = self.station
+        nextView.railDirection = direction
+        nextView.otherStations = self.otherStations
+        
+        nextView.modalTransitionStyle = .flipHorizontal
+        
+        self.present(nextView, animated: true, completion: nil)
     }
 }

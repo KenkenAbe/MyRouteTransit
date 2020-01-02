@@ -16,6 +16,7 @@ class RailwayLineChooseViewController:UIViewController, UITableViewDelegate, UIT
     var availableOperators = [TransportOperator]()
     var availableRailways = [String:[RailwayLine]]()
     var availableStations = [String:[Station]]()
+    var stationList = [Station]()
     
     @IBOutlet weak var railwayView: UITableView!
     
@@ -59,6 +60,7 @@ class RailwayLineChooseViewController:UIViewController, UITableViewDelegate, UIT
                     stationObject.stationName = station.1["odpt:stationTitle"]["ja"].stringValue
                     
                     self.availableStations[railwayObject.railwayCode]?.append(stationObject)
+                    self.stationList.append(stationObject)
                 }
                 
                 let railDirectionJsonFilePath = Bundle.main.path(forResource: "railDirections", ofType: "json")!
@@ -128,6 +130,7 @@ class RailwayLineChooseViewController:UIViewController, UITableViewDelegate, UIT
         nextView.railway = selectedRailway
         nextView.stations = self.availableStations[selectedRailway.railwayCode]!
         nextView.railwayDirection = selectedRailway.availableDirections
+        nextView.otherStations = self.stationList
         nextView.modalTransitionStyle = .flipHorizontal
         self.present(nextView, animated: true, completion: nil)
     }

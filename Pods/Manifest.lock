@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - CalculateCalendarLogic (0.3.0)
   - Realm (3.17.1):
     - Realm/Headers (= 3.17.1)
   - Realm/Headers (3.17.1)
@@ -9,22 +10,25 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CalculateCalendarLogic
   - RealmSwift
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CalculateCalendarLogic
     - Realm
     - RealmSwift
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CalculateCalendarLogic: cd5b2c706a8628bb924c5ee9d05c4f61bdbaf390
   Realm: c204f1a890f07dea43b14132a6aad118c054b8f2
   RealmSwift: 4d3c9233544b9cd08a8913e0872b9038eb99b054
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: ee1db3a68dc62bc955a84ded1ccec1d2afba5fca
+PODFILE CHECKSUM: 5a589631439187a734c9b476a76729fc1e8c64f1
 
 COCOAPODS: 1.7.5

@@ -15,6 +15,9 @@
 		963F93ED23B0C0BD00A4C1C4 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963F93EC23B0C0BD00A4C1C4 /* Configuration.swift */; };
 		9640A64E23BE4EFA00A0AC04 /* StationChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640A64D23BE4EFA00A0AC04 /* StationChooseViewController.swift */; };
 		9640A65023BE524A00A0AC04 /* railDirections.json in Resources */ = {isa = PBXBuildFile; fileRef = 9640A64F23BE524A00A0AC04 /* railDirections.json */; };
+		9640A65223BE637500A0AC04 /* TrainChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640A65123BE637500A0AC04 /* TrainChooseViewController.swift */; };
+		9640A65423BE717800A0AC04 /* TrainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9640A65323BE717800A0AC04 /* TrainViewCell.swift */; };
+		9640A65623BE76D200A0AC04 /* trainType.json in Resources */ = {isa = PBXBuildFile; fileRef = 9640A65523BE76D200A0AC04 /* trainType.json */; };
 		9661794623BB24830046244D /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661794523BB24830046244D /* RealmObjects.swift */; };
 		9661794823BB2B780046244D /* SavedRouteShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661794723BB2B770046244D /* SavedRouteShapeCell.swift */; };
 		9661794E23BBACEC0046244D /* RailwayRouteShapeConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661794D23BBACEC0046244D /* RailwayRouteShapeConfirmViewController.swift */; };
@@ -61,6 +64,9 @@
 		963F93EC23B0C0BD00A4C1C4 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		9640A64D23BE4EFA00A0AC04 /* StationChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationChooseViewController.swift; sourceTree = "<group>"; };
 		9640A64F23BE524A00A0AC04 /* railDirections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = railDirections.json; sourceTree = "<group>"; };
+		9640A65123BE637500A0AC04 /* TrainChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainChooseViewController.swift; sourceTree = "<group>"; };
+		9640A65323BE717800A0AC04 /* TrainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewCell.swift; sourceTree = "<group>"; };
+		9640A65523BE76D200A0AC04 /* trainType.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trainType.json; sourceTree = "<group>"; };
 		9661794523BB24830046244D /* RealmObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
 		9661794723BB2B770046244D /* SavedRouteShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SavedRouteShapeCell.swift; path = /Users/kentaro/dev/MyRouteTransit/MyRouteTransit/MyRouteTransit/SavedRouteShapeCell.swift; sourceTree = "<absolute>"; };
 		9661794D23BBACEC0046244D /* RailwayRouteShapeConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailwayRouteShapeConfirmViewController.swift; sourceTree = "<group>"; };
@@ -148,8 +154,12 @@
 				967EAE6023B0BEFF007D76F5 /* SavedRouteShapeViewController.swift */,
 				963F93EA23B0C07700A4C1C4 /* TransitChooseViewController.swift */,
 				967EAE6223B0BEFF007D76F5 /* Main.storyboard */,
+				9661794D23BBACEC0046244D /* RailwayRouteShapeConfirmViewController.swift */,
+				9671721E23BE1A4A006BBC28 /* RouteShapeViewCell.swift */,
 				9671722023BE24CD006BBC28 /* RailwayLineChooseViewController.swift */,
 				9640A64D23BE4EFA00A0AC04 /* StationChooseViewController.swift */,
+				9640A65123BE637500A0AC04 /* TrainChooseViewController.swift */,
+				9640A65323BE717800A0AC04 /* TrainViewCell.swift */,
 				967EAE6523B0BF03007D76F5 /* Assets.xcassets */,
 				967EAE6723B0BF03007D76F5 /* LaunchScreen.storyboard */,
 				967EAE6A23B0BF03007D76F5 /* Info.plist */,
@@ -160,8 +170,7 @@
 				9636548423BE3C1800AD767B /* operators.json */,
 				9636548623BE48C900AD767B /* railways.json */,
 				9640A64F23BE524A00A0AC04 /* railDirections.json */,
-				9661794D23BBACEC0046244D /* RailwayRouteShapeConfirmViewController.swift */,
-				9671721E23BE1A4A006BBC28 /* RouteShapeViewCell.swift */,
+				9640A65523BE76D200A0AC04 /* trainType.json */,
 			);
 			path = MyRouteTransit;
 			sourceTree = "<group>";
@@ -321,6 +330,7 @@
 				967EAE6923B0BF03007D76F5 /* LaunchScreen.storyboard in Resources */,
 				9636548523BE3C1800AD767B /* operators.json in Resources */,
 				967EAE6623B0BF03007D76F5 /* Assets.xcassets in Resources */,
+				9640A65623BE76D200A0AC04 /* trainType.json in Resources */,
 				967EAE6423B0BEFF007D76F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9640A65223BE637500A0AC04 /* TrainChooseViewController.swift in Sources */,
 				9661794623BB24830046244D /* RealmObjects.swift in Sources */,
 				967EAE6123B0BEFF007D76F5 /* SavedRouteShapeViewController.swift in Sources */,
 				9671721F23BE1A4A006BBC28 /* RouteShapeViewCell.swift in Sources */,
@@ -444,6 +455,7 @@
 				9671722123BE24CD006BBC28 /* RailwayLineChooseViewController.swift in Sources */,
 				967EAE5F23B0BEFF007D76F5 /* SceneDelegate.swift in Sources */,
 				963F93EB23B0C07700A4C1C4 /* TransitChooseViewController.swift in Sources */,
+				9640A65423BE717800A0AC04 /* TrainViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

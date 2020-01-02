@@ -9,6 +9,7 @@ target 'MyRouteTransit' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'RealmSwift'
+  pod 'CalculateCalendarLogic'
 
   target 'MyRouteTransitTests' do
     inherit! :search_paths

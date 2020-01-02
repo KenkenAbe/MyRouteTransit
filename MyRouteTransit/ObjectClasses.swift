@@ -9,9 +9,9 @@
 import Foundation
 
 class RouteShapeBase {
-    var railwayCode:String = ""
-    var originStationCode:String = ""
-    var destinationStationCode:String = ""
+    var railwayCode:RailwayLine!
+    var originStationCode:Station!
+    var destinationStationCode:Station!
     var originStationDepartureTime:Date!
     var destinationStationAriivalTime:Date!
     var isFinal:Bool = false
@@ -36,4 +36,18 @@ class Station {
 class RailDirection {
     var directionCode:String = ""
     var directionTitle:String = ""
+}
+
+class Train {
+    var trainCode:String = ""
+    var type:TrainType!
+    var trainNumber:String = ""
+    var destination:[Station] = [Station]()
+    var departureTimeTitle:String = ""
+    var departureTime:Date!
+}
+
+class TrainType {
+    var typeCode:String = ""
+    var typeTitle:String = ""
 }

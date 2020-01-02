@@ -126,8 +126,8 @@
             filePath = "MyRouteTransit/RailwayLineChooseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,9 +142,153 @@
             filePath = "MyRouteTransit/RailwayLineChooseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "339E2996-5483-4AB1-9883-B44B9D0B688D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyRouteTransit/TrainChooseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "getTimetableFromOdptApi(calendar:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "339E2996-5483-4AB1-9883-B44B9D0B688D - 7adf8e33b024dcb3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in MyRouteTransit.TrainChooseViewController.getTimetableFromOdptApi(calendar: Swift.String) -&gt; ()"
+                  moduleName = "MyRouteTransit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/dev/MyRouteTransit/MyRouteTransit/MyRouteTransit/TrainChooseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "8940">
+               </Location>
+               <Location
+                  uuid = "339E2996-5483-4AB1-9883-B44B9D0B688D - a322f4baf4d6dc62"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #4 (MyRouteTransit.StationTimetable, MyRouteTransit.StationTimetable) -&gt; Swift.Bool in closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in MyRouteTransit.TrainChooseViewController.getTimetableFromOdptApi(calendar: Swift.String) -&gt; ()"
+                  moduleName = "MyRouteTransit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/dev/MyRouteTransit/MyRouteTransit/MyRouteTransit/TrainChooseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32BFB93B-3FA6-472A-82E7-35A9FE57CA07"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyRouteTransit/TrainChooseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "getTimetableFromOdptApi(calendar:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5016F7CA-8C14-4F95-88A9-324C9F254CD0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyRouteTransit/TrainChooseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "getTimetableFromOdptApi(calendar:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5016F7CA-8C14-4F95-88A9-324C9F254CD0 - 93f616ed80ae17d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyRouteTransit.TrainChooseViewController.getTimetableFromOdptApi(calendar: Swift.String) -&gt; ()"
+                  moduleName = "MyRouteTransit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/dev/MyRouteTransit/MyRouteTransit/MyRouteTransit/TrainChooseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "5016F7CA-8C14-4F95-88A9-324C9F254CD0 - 7adf8e33b024dcb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in MyRouteTransit.TrainChooseViewController.getTimetableFromOdptApi(calendar: Swift.String) -&gt; ()"
+                  moduleName = "MyRouteTransit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kentaro/dev/MyRouteTransit/MyRouteTransit/MyRouteTransit/TrainChooseViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "672">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F91BA5CC-2EED-4861-BF68-EED6D286E1A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyRouteTransit/TrainChooseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "getTimetableFromOdptApi(calendar:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77D29B70-E704-4ACA-8E8C-A3E8360E7B7D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyRouteTransit/TrainChooseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "getTimetableFromOdptApi(calendar:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
