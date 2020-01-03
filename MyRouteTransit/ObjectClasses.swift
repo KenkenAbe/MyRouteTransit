@@ -13,7 +13,8 @@ class RouteShapeBase {
     var originStationCode:Station!
     var destinationStationCode:Station!
     var originStationDepartureTime:Date!
-    var destinationStationAriivalTime:Date!
+    var destinationStationArrivalTime:Date!
+    var train:Train!
     var isFinal:Bool = false
 }
 
@@ -50,4 +51,11 @@ class Train {
 class TrainType {
     var typeCode:String = ""
     var typeTitle:String = ""
+}
+
+class TimetableObject {
+    var train:Train!
+    var departureStation:Station!
+    var departureTime:Date!
+    var departureTimeTitle:String!
 }

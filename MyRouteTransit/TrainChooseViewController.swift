@@ -26,6 +26,7 @@ class TrainChooseViewController: UIViewController, UITableViewDelegate, UITableV
     
     let calendarJudge = CalculateCalendarLogic()
     let config = Configuration()
+    var calendarString = ""
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class TrainChooseViewController: UIViewController, UITableViewDelegate, UITableV
         self.timePicker.setDate(date, animated: false)
         let calendar = Calendar.current
         
-        var calendarString = ""
+        calendarString = ""
         if calendarJudge.judgeJapaneseHoliday(year: calendar.component(.year, from: date), month: calendar.component(.month, from: date), day: calendar.component(.day, from: date), checkNationalHoliday: true){
             calendarString = "odpt.Calendar:SaturdayHoliday"
         }else{
@@ -85,7 +86,7 @@ class TrainChooseViewController: UIViewController, UITableViewDelegate, UITableV
                     Int(train.departureTimeTitle.split(separator: ":")[1])!
                 ]
                 
-                if departureTimeArray[0] <= 4{
+                if departureTimeArray[0] <= 3{
                     departureTimeArray[0] += 24
                 }
                 
@@ -128,5 +129,174 @@ class TrainChooseViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTrain = self.stationTrainList[indexPath.row]
+        var trainTimetableJsonObject:JSON!
+        var departureTimeList = [TimetableObject]()
+        
+        let queue = DispatchQueue.global(qos: .utility)
+        let semaphore = DispatchSemaphore.init(value: 0)
+       
+
+        let selectedDateOnPicker = self.timePicker.date
+        var isNotResolveConnectingStationTime = true
+        
+        let calendar = Calendar.current
+        Alamofire.request("\(self.config["ODPT_BASE_URL"])/api/v4/odpt:TrainTimetable?odpt:train=\(selectedTrain.trainCode)&odpt:calendar=\(self.calendarString)&acl:consumerKey=\(self.config["ODPT_API_KEY"])").responseJSON(queue: queue){response in
+            guard let value = response.result.value else{
+                return
+            }
+
+            trainTimetableJsonObject = JSON(value)[0]
+            for stationJsonObject in trainTimetableJsonObject["odpt:trainTimetableObject"]{
+                let object = TimetableObject()
+                object.train = selectedTrain
+                
+                var arrivalStationCode = ""
+                if let s = stationJsonObject.1["odpt:departureStation"].string{
+                    arrivalStationCode = s
+                }else if let s = stationJsonObject.1["odpt:arrivalStation"].string{
+                    arrivalStationCode = s
+                }
+                
+                if self.station.stationCode == arrivalStationCode{
+                    object.departureStation = self.station
+                }else{
+                    object.departureStation = self.otherStations.filter({$0.stationCode == arrivalStationCode})[0]
+                }
+                
+                if let arrivalTime = stationJsonObject.1["odpt:arrivalTime"].string{
+                    object.departureTimeTitle = arrivalTime
+                }else if let arrivalTime = stationJsonObject.1["odpt:departureTime"].string{
+                    object.departureTimeTitle = arrivalTime
+                }else{
+                    isNotResolveConnectingStationTime = false
+                    continue
+                }
+                
+                var departureTimeArray = [
+                    Int(object.departureTimeTitle.split(separator: ":")[0])!,
+                    Int(object.departureTimeTitle.split(separator: ":")[1])!
+                ]
+                
+                if departureTimeArray[0] <= 3{
+                    departureTimeArray[0] += 24
+                }
+                
+                guard let departureTime = calendar.date(from: DateComponents.init(timeZone: .autoupdatingCurrent, year: calendar.component(.year, from: selectedDateOnPicker), month: calendar.component(.month, from: selectedDateOnPicker), day: calendar.component(.day, from: selectedDateOnPicker), hour: departureTimeArray[0], minute: departureTimeArray[1])) else{
+                    fatalError()
+                }
+                
+                object.departureTime = departureTime
+                departureTimeList.append(object)
+            }
+            
+            semaphore.signal()
+        }
+        semaphore.wait()
+        
+        if trainTimetableJsonObject["odpt:nextTrainTimetable"].count != 0{
+            //直通先列車の時刻表が利用可能な場合
+
+            let nextTrainGetQueue = DispatchQueue.global(qos: .utility)
+            let nextTrainGetSemaphore = DispatchSemaphore.init(value: 0)
+            var nextTrainTimeTableJsonObject:JSON!
+            Alamofire.request("\(self.config["ODPT_BASE_URL"])/api/v4/odpt:TrainTimetable?owl:sameAs=\(trainTimetableJsonObject["odpt:nextTrainTimetable"][0].stringValue)&acl:consumerKey=\(self.config["ODPT_API_KEY"])").responseJSON(queue: nextTrainGetQueue){response in
+                guard let nextTrainTimeTableValue = response.result.value else{
+                    return
+                }
+                
+                nextTrainTimeTableJsonObject = JSON(nextTrainTimeTableValue)[0]
+                
+                nextTrainGetSemaphore.signal()
+            }
+            nextTrainGetSemaphore.wait()
+            
+            let nextTrain = Train()
+            nextTrain.trainCode = nextTrainTimeTableJsonObject["odpt:train"].stringValue
+            nextTrain.trainNumber = nextTrainTimeTableJsonObject["odpt:trainNumber"].stringValue
+            nextTrain.departureTime = selectedTrain.departureTime
+            nextTrain.departureTimeTitle = selectedTrain.departureTimeTitle
+            nextTrain.destination = selectedTrain.destination
+            nextTrain.type = self.trainTypeList.filter({$0.typeCode == nextTrainTimeTableJsonObject["odpt:trainType"].stringValue})[0]
+            
+            for stationJsonObject in nextTrainTimeTableJsonObject["odpt:trainTimetableObject"]{
+                if isNotResolveConnectingStationTime && stationJsonObject == nextTrainTimeTableJsonObject["odpt:trainTimetableObject"].first!{
+                    continue
+                }
+                
+                let object = TimetableObject()
+                object.train = nextTrain
+                
+                var arrivalStationCode = ""
+                if let s = stationJsonObject.1["odpt:departureStation"].string{
+                    arrivalStationCode = s
+                }else if let s = stationJsonObject.1["odpt:arrivalStation"].string{
+                    arrivalStationCode = s
+                }
+                
+                if self.station.stationCode == arrivalStationCode{
+                    object.departureStation = self.station
+                }else{
+                    object.departureStation = self.otherStations.filter({$0.stationCode == arrivalStationCode})[0]
+                }
+                
+                if let arrivalTime = stationJsonObject.1["odpt:arrivalTime"].string{
+                    object.departureTimeTitle = arrivalTime
+                }else{
+                    object.departureTimeTitle = stationJsonObject.1["odpt:departureTime"].stringValue
+                }
+                
+                var departureTimeArray = [
+                    Int(object.departureTimeTitle.split(separator: ":")[0])!,
+                    Int(object.departureTimeTitle.split(separator: ":")[1])!
+                ]
+                
+                if departureTimeArray[0] <= 4{
+                    departureTimeArray[0] += 24
+                }
+                
+                guard let departureTime = calendar.date(from: DateComponents.init(timeZone: .autoupdatingCurrent, year: calendar.component(.year, from: selectedDateOnPicker), month: calendar.component(.month, from: selectedDateOnPicker), day: calendar.component(.day, from: selectedDateOnPicker), hour: departureTimeArray[0], minute: departureTimeArray[1])) else{
+                    fatalError()
+                }
+                
+                object.departureTime = departureTime
+                departureTimeList.append(object)
+            }
+            
+        }
+        
+        let alert = UIAlertController(title: "降車駅を選択してください", message: "他路線直通列車を利用する場合で、直通先の駅名が出ない場合は、この列車の最後の停車駅を選択してください。\n列車時刻表が提供されていない鉄道会社（例：西武鉄道）の路線では、降車駅選択はできません。", preferredStyle: .alert)
+        for arrivalStation in departureTimeList{
+            alert.addAction(UIAlertAction(title: "\(arrivalStation.departureStation.stationName) (\(arrivalStation.departureTimeTitle!)着)", style: .default, handler: {action in
+                self.chooseLeaveStation(selectedTrain: selectedTrain, timetableObject: arrivalStation)
+            }))
+        }
+
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .destructive, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func chooseLeaveStation(selectedTrain:Train, timetableObject: TimetableObject){
+        let routeShapeObject = RouteShapeBase()
+        routeShapeObject.isFinal = true
+        routeShapeObject.originStationCode = station
+        routeShapeObject.originStationDepartureTime = selectedTrain.departureTime
+        routeShapeObject.destinationStationCode = timetableObject.departureStation
+        routeShapeObject.destinationStationArrivalTime = timetableObject.departureTime
+        routeShapeObject.railwayCode = self.railway
+        routeShapeObject.train = selectedTrain
+        
+        let routeShapeResultViewController = self.presentingViewController?.presentingViewController?.presentingViewController as! RailwayRouteShapeConfirm
+        
+        if routeShapeResultViewController.routeShape.count != 0{
+            routeShapeResultViewController.routeShape.last!.isFinal = false
+        }
+        
+        routeShapeResultViewController.routeShape.append(routeShapeObject)
+        routeShapeResultViewController.summaryView.reloadData()
+        
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }

@@ -23,6 +23,7 @@ class RailwayRouteShapeConfirm: UIViewController, UITableViewDelegate, UITableVi
         
         summaryView.delegate = self
         summaryView.dataSource = self
+        summaryView.rowHeight = UITableView.automaticDimension
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +35,7 @@ class RailwayRouteShapeConfirm: UIViewController, UITableViewDelegate, UITableVi
         if self.routeShape.count == 0{
             return 1
         }else{
-            return self.routeShape.count
+            return self.routeShape.count + 1
         }
     }
     
@@ -44,7 +45,26 @@ class RailwayRouteShapeConfirm: UIViewController, UITableViewDelegate, UITableVi
             return cell
             
         }else{
+            let targetRouteShape = routeShape[indexPath.row]
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "RouteShapeView") as! RouteShapeViewCell
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            formatter.locale = Locale.current
+            
+            cell.departureTimeLabel.text = "\(formatter.string(from: targetRouteShape.originStationDepartureTime))発"
+            cell.arrivalTimeLabel.text = "\(formatter.string(from: targetRouteShape.destinationStationArrivalTime))着"
+            
+            cell.originStationLabel.text = targetRouteShape.originStationCode.stationName
+            cell.destinationStationLabel.text = targetRouteShape.destinationStationCode.stationName
+            
+            cell.railwayTitleLabel.text = "\(targetRouteShape.railwayCode.railwayOperator.operatorName) \(targetRouteShape.railwayCode.railwayName)"
+            
+            var terminalStations = [String]()
+            for terminalStation in targetRouteShape.train.destination{
+                terminalStations.append(terminalStation.stationName)
+            }
+            cell.terminalStationNameLabel.text = "\(terminalStations.joined(separator: ","))行"
             
             return cell
         }
@@ -60,7 +80,7 @@ class RailwayRouteShapeConfirm: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == routeShape.count{
-            var nextView = storyboard!.instantiateViewController(identifier: "railwayChooseView") as! RailwayLineChooseViewController
+            let nextView = storyboard!.instantiateViewController(identifier: "railwayChooseView") as! RailwayLineChooseViewController
             let db = try! Realm()
             let operatorDbData = db.objects(TransportOperator.self)
             for operatorRow in operatorDbData{
